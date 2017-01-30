@@ -1,7 +1,7 @@
 import { CHANGE_AUTH } from '../actions/types';
 
 export default function(state=false, action) {
-  switch (action.types) {
+  switch (action.type) {
     case CHANGE_AUTH:
       return action.payload;
     default:

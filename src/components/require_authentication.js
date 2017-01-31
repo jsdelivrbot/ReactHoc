@@ -9,8 +9,10 @@ export default function(ComposedComponent) {
     };
 
     componentWillMount() {
+      /*
       if ( ! this.props.authenticated )
         this.context.router.push('/');
+      */
     }
 
     componentWillUpdate(nextProps) {
@@ -19,7 +21,9 @@ export default function(ComposedComponent) {
     }
 
     render() {
+      if ( this.props.authenticated )
         return <ComposedComponent {...this.props} />;
+      return <div>Unauthorized</div>;
     };
   }
 
